@@ -12,6 +12,8 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -19,8 +21,25 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'lastname',
+        'user_name',
         'password',
+        'password_text',
+        'email',
+        'phone',
+        'address',
+        'avatar_url',
+        'birthdate',
+        'doc_type',
+        'doc_number',
+        'sex',
+        'sex_orientation',
+        'rh',
+        'data_value',
+        'state',
+        'id_user_type',
+        'id_city',
+        'id_role'
     ];
 
     /**
@@ -29,8 +48,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'password'
     ];
 
     /**
@@ -44,5 +62,20 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function userType()
+    {
+        return $this->belongsTo(UserType::class, 'id_user_type');
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'id_role');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'id_city');
     }
 }
