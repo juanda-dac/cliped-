@@ -10,6 +10,8 @@ class ProviderUser extends Model
     
     protected $table = 'providers_users';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'id_provider',
         'id_user'

@@ -12,6 +12,8 @@ class UserType extends Model
 
     protected $table = 'users_types';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
         'data_schema',

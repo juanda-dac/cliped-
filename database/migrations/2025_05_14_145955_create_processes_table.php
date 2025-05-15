@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('processes', function (Blueprint $table) {
             $table->integer('id')->autoIncrement()->unsigned();
-            $table->integer('id_top', unsigned: true);
+            $table->integer('id_top', unsigned: true)->nullable();
             $table->string('name', 50)->nullable(false);
             $table->string('description', 200)->nullable();
             $table->string('url', 200)->nullable(false);

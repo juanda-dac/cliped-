@@ -19,7 +19,7 @@ class CityFactory extends Factory
         return [
             'name' => fake()->randomElement(['Bucaramanga']),
             'city_cod' => fake()->randomElement(['BGA']),
-            'id_state' => fake()->random_int()    
+            'id_state' => fake()->randomDigit()
         ];
     }
 }

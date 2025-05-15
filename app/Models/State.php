@@ -11,6 +11,8 @@ class State extends Model
 
     protected $table = 'states';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
         'state_cod',

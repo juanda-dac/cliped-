@@ -9,6 +9,8 @@ class Branch extends Model
     
     protected $table = 'branches';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
         'id_customer'

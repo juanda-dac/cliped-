@@ -18,8 +18,9 @@ class UserTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => Str::random_int(1, 100),
-            'name' => fake()->randomElement(['empleado', 'cliente', 'proveedor'])
+            'id' => 1,
+            'name' => $this->faker->unique()->word(),
+            'data_schema' => json_encode([])
         ];
     }
 }

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->char('iso_cod_3', 3)->unique();
             $table->string('phone_prefix', 10);
             $table->binary('flag'); // binary is equivalent to BLOB in MySQL
-            $table->timestamps();
         });
     }
 

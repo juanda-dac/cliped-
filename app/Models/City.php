@@ -12,6 +12,8 @@ class City extends Model
 
     protected $table = 'cities';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
         'city_code',

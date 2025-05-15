@@ -10,6 +10,8 @@ class CustomeUser extends Model
     
     protected $table = 'customers_users';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'id_user',
         'id_branch'

@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->smallInteger('id')->autoIncrement()->unsigned();
-            $table->integer('company_id', unsigned: true)->nullable(false);
+            $table->integer('id_company', unsigned: true)->nullable(false);
             $table->string('name', 100);
             $table->text('description')->nullable();
 
-            $table->foreign('company_id')
+            $table->foreign('id_company')
                 ->references('id')->on('companies')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

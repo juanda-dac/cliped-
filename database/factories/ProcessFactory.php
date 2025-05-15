@@ -23,7 +23,7 @@ class ProcessFactory extends Factory
             'description' => fake()->sentence(),
             'url'=>fake()->url(),
             'icon' => Str::toBase64('test'),
-            'order'=> Str::random_int(1, 100),
+            'order'=> fake()->randomDigit(),
             'hidden' => fake()->randomElement(['0', '1']),
             'state'=>fake()->randomElement([1, 0]),
         ];

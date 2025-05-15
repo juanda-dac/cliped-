@@ -18,7 +18,7 @@ class ActionFactory extends Factory
     public function definition(): array
     {
         return [
-            'id'=>Str::random_int(1, 100),
+            'id'=>fake()->randomDigit(),
             'name' => fake()->name(),
             'letter' => fake()->randomElement(['A', 'B', 'C']),
         ];

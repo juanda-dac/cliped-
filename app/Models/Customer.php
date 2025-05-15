@@ -9,6 +9,8 @@ class Customer extends Model
 
     protected $table = 'customers';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'name'
     ];

@@ -19,7 +19,7 @@ class StateFactory extends Factory
         return [
             'name'=> fake()->randomElement(['Santander']),
             'state_cod' => fake()->randomElement(['SDER']),
-            'id_country' => fake()->random_int()
+            'id_country' => fake()->randomElement([1]),
         ];
     }
 }

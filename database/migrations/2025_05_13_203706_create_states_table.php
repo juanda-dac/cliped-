@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('states', function (Blueprint $table) {
             $table->smallInteger('id')->autoIncrement()->unsigned();
-            $table->smallInteger('country_id')->nullable(false)->unsigned();
+            $table->smallInteger('id_country')->nullable(false)->unsigned();
             $table->string('name', 100)->nullable(false);
             $table->string('state_cod', 10);
 
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('restrict');
+            $table->foreign('id_country')->references('id')->on('countries')->onDelete('restrict');
         });
     }
 

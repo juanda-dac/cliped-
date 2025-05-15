@@ -14,19 +14,13 @@ class UserTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        UserType::factory()->count(3)->create(new Sequence([
-            [
-                'id' => 1,
-                'name' => 'empleado'
-            ],
-            [
-                'id' => 2,
-                'name' => 'cliente'
-            ],
-            [
-                'id' => 3,
-                'name' => 'proveedor'
-            ]
-        ]));
+        UserType::factory()
+            ->count(3)
+            ->state(new Sequence(
+                ['id' =>1 ,'name' => 'admin', 'data_schema' => json_encode(['permissions' => ['all']])],
+                ['id' =>2 ,'name' => 'user', 'data_schema' => json_encode(['permissions' => ['read']])],
+                ['id' =>3 ,'name' => 'guest', 'data_schema' => json_encode(['permissions' => ['read']])]
+            ))
+            ->create();
     }
 }
