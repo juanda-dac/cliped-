@@ -30,7 +30,7 @@ class Process extends Model
         return $this->belongsTo(Process::class, 'id_top');
     }
 
-    public function children()
+    public function childrens()
     {
         return $this->hasMany(Process::class, 'id_top');
     }

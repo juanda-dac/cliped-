@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('customers_users', function (Blueprint $table) {
             $table->integer('id')->autoIncrement()->unsigned();
-            $table->integer('id_customer', unsigned: true)->nullable(false);
+            $table->integer('id_branch', unsigned: true)->nullable(false);
             $table->integer('id_user', unsigned: true)->nullable(false);
 
-            $table->foreign('id_customer')
-                ->references('id')->on('customers')
+            $table->foreign('id_branch')
+                ->references('id')->on('branches')
                 ->onDelete('restrict');
 
             $table->foreign('id_user')
