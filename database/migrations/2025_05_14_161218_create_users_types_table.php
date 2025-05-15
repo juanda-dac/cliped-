@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('users_types', function (Blueprint $table) {
             $table->smallInteger('id')->unsigned()->primary();
             $table->string('name');
-            $table->json('data_schema');
+            $table->json('data_schema')->nullable();
         });
     }
 

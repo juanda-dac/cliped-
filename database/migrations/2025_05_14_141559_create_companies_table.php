@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('doc_type', 15)->nullable(false);
             $table->string('doc_number', 45)->nullable(false);
             $table->string('address', 200)->nullable(false);
-            $table->string('zone', 100);
+            $table->string('zone', 100)->nullable();
             $table->string('email', 100)->nullable(false);
             $table->string('phone', 100)->nullable(false);
-            $table->binary('logo');
+            $table->binary('logo')->nullable();
             $table->string('instagram_url', 200);
             $table->string('tiktok_url', 200);
             $table->string('youtube_url', 200);

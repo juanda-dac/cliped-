@@ -15,9 +15,9 @@ return new class extends Migration
             $table->integer('id')->autoIncrement()->unsigned();
             $table->integer('id_top', unsigned: true);
             $table->string('name', 50)->nullable(false);
-            $table->string('description', 200);
-            $table->string('url', 200);
-            $table->binary('icon');
+            $table->string('description', 200)->nullable();
+            $table->string('url', 200)->nullable(false);
+            $table->binary('icon')->nullable();
             $table->smallInteger('order', unsigned: true)->nullable(false);
             $table->char('hidden', 1)->nullable(false)->default('0');
             $table->timestamps();
