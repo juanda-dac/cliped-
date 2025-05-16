@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('url', 200)->nullable(false);
             $table->binary('icon')->nullable();
             $table->smallInteger('order', unsigned: true)->nullable(false);
-            $table->char('hidden', 1)->nullable(false)->default('0');
+            // $table->char('hidden', 1)->nullable(false)->default('0');
+            $table->boolean('hidden')->nullable(false)->default(false); // 0 = false, 1 = true => Propuesta de tipo booleano en vez de un char
             $table->timestamps();
             $table->tinyInteger('state', unsigned: true)->nullable(false)->default(1);
 

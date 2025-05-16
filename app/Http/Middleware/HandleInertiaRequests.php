@@ -2,9 +2,14 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\City;
+use App\Models\Permission;
+use App\Models\Process;
 use App\Models\Role;
+use App\Models\UserType;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 
@@ -40,6 +45,11 @@ class HandleInertiaRequests extends Middleware
     {
         [$message, $author] = str(Inspiring::quotes()->random())->explode('-');
         $roles = Role::all();
+        $cities = City::all();
+        $user_types = UserType::all();
+        $permissions = Permission::with(['actions', 'roles', 'processes'])->get();
+
+        Log::info('Roles', ['roles' => $roles]);
 
         return [
             ...parent::share($request),
@@ -54,6 +64,12 @@ class HandleInertiaRequests extends Middleware
             ],
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
             'roles' => $roles,
+            'permissions' => $permissions,
+            'form' => [
+                'cities' => $cities->toArray(),
+                'userTypes' => $user_types,
+                'roles' => $roles->toArray(),
+            ]
         ];
     }
 }

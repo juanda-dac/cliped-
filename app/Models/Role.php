@@ -19,6 +19,10 @@ class Role extends Model
         'id_user_type'
     ];
 
+    protected $hidden = [
+        'id_user_type'
+    ];
+
     public function userType()
     {
         return $this->belongsTo(UserType::class, 'id_user_type');

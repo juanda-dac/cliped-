@@ -13,13 +13,13 @@ class ActionSeeder extends Seeder
      */
     public function run(): void
     {
-        Action::factory()->create(new Sequence(
+        Action::factory()->count(5)->state(new Sequence(
             ['id' => 1, 'name' => 'create', 'letter' => 'W'],
             ['id' => 2, 'name' => 'read', 'letter' => 'R'],
             ['id' => 3, 'name' => 'update', 'letter' => 'U'],
             ['id' => 4, 'name' => 'delete', 'letter' => 'D'],
             ['id' => 5, 'name' => 'execute', 'letter' => 'E'],
-        ));
+        ))->create();
         
     }
 }

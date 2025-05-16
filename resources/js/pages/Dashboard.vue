@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, usePage } from '@inertiajs/vue3';
+import { Link, usePage, useForm } from '@inertiajs/vue3';
 import { computed } from 'vue';
 
 interface Role{
@@ -7,8 +7,37 @@ interface Role{
     name: string;
 }
 
+interface Action{
+    id: number;
+    name: string;
+    letter: string;
+}
+
+interface Proccess{
+    id: number;
+    idTop: number | null;
+    name: string;
+    description: string;
+    url: string;
+    icon?: string;
+    order: number;
+    hidden: true | false;
+}
+
+interface Permission{
+    role: Role,
+    action: Action,
+    proccess: Proccess,
+}
+
 const page = usePage();
-const roles = computed<Role[]>(() => page.props.roles as Role[]);
+const formProps = computed(() => page.props.form);
+
+console.log(formProps.value.userTypes);
+
+const form = useForm({
+    
+});
 
 </script>
 
@@ -19,18 +48,7 @@ const roles = computed<Role[]>(() => page.props.roles as Role[]);
         <Link href="/" class="text-blue-500 hover:underline">Go to Welcome</Link>
     </p>
 
-    <table class="table-auto w-full mt-4">
-        <thead>
-            <tr>
-                <th class="border border-black">ID</th>
-                <th class="border border-black">Rol</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="role in roles" :key="role.id">
-                <td class="border border-black">{{ role.id }}</td>
-                <td class="border border-black">{{ role.name }}</td>
-            </tr>
-        </tbody>
-    </table>
+
+
+   
 </template>

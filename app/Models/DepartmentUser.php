@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class DepartmentUser extends Model
+class DepartmentUser extends BaseModel
 {
     protected $table = 'departments_users';
 

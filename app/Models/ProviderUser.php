@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class ProviderUser extends Model
+class ProviderUser extends BaseModel
 {
     
     protected $table = 'providers_users';

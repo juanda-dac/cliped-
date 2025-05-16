@@ -13,7 +13,7 @@ class PermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        Permission::factory()->create(new Sequence(
+        Permission::factory()->count(13)->state(new Sequence(
             [
                 'id_action' => 1,
                 'id_role' => 1,
@@ -79,6 +79,6 @@ class PermissionSeeder extends Seeder
                 'id_role' => 4,
                 'id_process' => 1
             ],
-        ));
+        ))->create();
     }
 }
