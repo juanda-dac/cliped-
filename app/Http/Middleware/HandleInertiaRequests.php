@@ -49,8 +49,6 @@ class HandleInertiaRequests extends Middleware
         $user_types = UserType::all();
         $permissions = Permission::with(['actions', 'roles', 'processes'])->get();
 
-        Log::info('Roles', ['roles' => $roles]);
-
         return [
             ...parent::share($request),
             'name' => config('app.name'),

@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('avatar_url', 250)->nullable();
             $table->date('birth_date')->nullable();
             $table->string('doc_type', 10);
-            $table->string('doc_number', 50);
+            $table->string('doc_number', 50)->unique();
             $table->char('sex', 1)->nullable(false);
             $table->string('sex_orientation', 50);
             $table->string('rh', 10);

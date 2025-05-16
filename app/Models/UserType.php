@@ -19,6 +19,13 @@ class UserType extends BaseModel
         'data_schema',
     ];
 
+    protected function casts()
+    {
+        return [
+            'data_schema' => 'json',
+        ];
+    }
+
     public function roles()
     {
         return $this->hasMany(Role::class, 'id_user_type');

@@ -34,6 +34,9 @@ createInertiaApp({
     progress: {
         color: '#4B5563',
     },
+}).then(() => {
+    // @ts-ignore
+    document.getElementById('app').removeAttribute('data-page');
 });
 
 // This will set light / dark mode on page load...
