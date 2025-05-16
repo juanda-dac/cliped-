@@ -16,6 +16,10 @@ class Branch extends BaseModel
         'id_customer'
     ];
 
+    protected $hidden = [
+        'id_customer'
+    ];
+
     public function customers()
     {
         return $this->belongsTo(Customer::class, 'id_customer');

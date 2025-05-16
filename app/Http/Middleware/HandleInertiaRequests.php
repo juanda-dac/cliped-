@@ -66,9 +66,9 @@ class HandleInertiaRequests extends Middleware
             'roles' => $roles,
             'permissions' => $permissions,
             'form' => [
-                'cities' => $cities->toArray(),
+                'cities' => $cities,
                 'userTypes' => $user_types,
-                'roles' => $roles->toArray(),
+                'roles' => $roles,
             ]
         ];
     }

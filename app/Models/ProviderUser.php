@@ -17,6 +17,11 @@ class ProviderUser extends BaseModel
         'id_user'
     ];
 
+    protected $hidden = [
+        'id_provider',
+        'id_user'
+    ];
+
     public function provider()
     {
         return $this->belongsTo(Provider::class, 'id_provider');

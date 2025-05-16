@@ -27,6 +27,10 @@ class Company extends BaseModel
         'id_city'
     ];
 
+    protected $hidden = [
+        'id_city',
+    ];
+
     public function city()
     {
         return $this->belongsTo(City::class, 'id_city');

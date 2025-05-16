@@ -19,6 +19,12 @@ class Permission extends Model
         'id_process',
     ];
 
+    protected $hidden = [
+        'id_action',
+        'id_role',
+        'id_process',
+    ];
+
     protected function casts(): array
     {
         return [

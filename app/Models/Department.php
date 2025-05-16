@@ -16,6 +16,10 @@ class Department extends BaseModel
         'id_company'
     ];
 
+    protected $hidden = [
+        'id_company',
+    ];
+
     public function company()
     {
         return $this->belongsTo(Company::class, 'id_company');

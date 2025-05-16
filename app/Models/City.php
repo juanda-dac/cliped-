@@ -20,6 +20,10 @@ class City extends BaseModel
         'id_state',
     ];
 
+    protected $hidden = [
+        'id_state',
+    ];
+
     public function state()
     {
         return $this->belongsTo(State::class, 'id_state');

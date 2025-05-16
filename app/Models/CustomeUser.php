@@ -17,6 +17,11 @@ class CustomeUser extends BaseModel
         'id_branch'
     ];
 
+    protected $hidden = [
+        'id_user',
+        'id_branch'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class, 'id_user');

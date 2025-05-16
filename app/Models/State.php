@@ -19,6 +19,10 @@ class State extends BaseModel
         'id_country',
     ];
 
+    protected $hidden = [
+        'id_country',
+    ];
+
     public function country()
     {
         return $this->belongsTo(Country::class, 'id_country');

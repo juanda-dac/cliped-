@@ -18,6 +18,12 @@ class DepartmentUser extends BaseModel
         'id_position'
     ];
 
+    protected $hidden = [
+        'id_user',
+        'id_department',
+        'id_position'
+    ];
+
     public function users()
     {
         return $this->belongsTo(User::class, 'id_user');

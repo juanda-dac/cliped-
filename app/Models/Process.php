@@ -23,6 +23,10 @@ class Process extends BaseModel
         'id_top'
     ];
 
+    protected $hidden = [
+        'id_top',
+    ];
+
     protected $casts = [
         'hidden' => 'boolean',
         'state' => 'boolean',
